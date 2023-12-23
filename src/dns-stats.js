@@ -34,11 +34,7 @@ function getDNSStats(domains) {
     }
   }
   dnsArr.forEach((dns) => {
-    if (Object.hasOwn(result, dns)) {
-      result[dns] = result[dns] + 1;
-    } else {
-      result[dns] = 1;
-    }
+    result[dns] = result[dns] + 1 || 1;
   });
   return result;
 }
